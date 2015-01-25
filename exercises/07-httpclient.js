@@ -12,9 +12,6 @@ var http = require('http'),
 
 http.get(url, function (response) {
     response.setEncoding('utf8');
-    response.on('data', function (data) {
-        console.log(data);
-    }).on('error', function (err) {
-        console.error(err);
-    });
+    response.on('data', console.log)
+            .on('error', console.error);
 });
